@@ -1,3 +1,7 @@
+> ❗❗❗
+> This is a fork of OpenRGB.NET supporting .NET 
+> standard 2.0, so you can use it in your .NET framework projects.
+
 # OpenRGB.NET
 [![Nuget](https://img.shields.io/nuget/v/OpenRGB.NET)](https://www.nuget.org/packages/OpenRGB.NET)
 

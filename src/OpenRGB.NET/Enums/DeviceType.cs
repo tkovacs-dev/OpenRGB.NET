@@ -1,82 +1,84 @@
-﻿namespace OpenRGB.NET;
-
-/// <summary>
-///     Enum representing the various device types supported.
-/// </summary>
-public enum DeviceType
+﻿namespace OpenRGB.NET
 {
-    /// <summary>
-    ///     Motherboard device type.
-    /// </summary>
-    Motherboard,
 
     /// <summary>
-    ///     RAM device type.
+    ///     Enum representing the various device types supported.
     /// </summary>
-    Dram,
+    public enum DeviceType
+    {
+        /// <summary>
+        ///     Motherboard device type.
+        /// </summary>
+        Motherboard,
 
-    /// <summary>
-    ///     GPU device type.
-    /// </summary>
-    Gpu,
+        /// <summary>
+        ///     RAM device type.
+        /// </summary>
+        Dram,
 
-    /// <summary>
-    ///     CPU device type.
-    /// </summary>
-    Cooler,
+        /// <summary>
+        ///     GPU device type.
+        /// </summary>
+        Gpu,
 
-    /// <summary>
-    ///     LED strip device type.
-    /// </summary>
-    Ledstrip,
+        /// <summary>
+        ///     CPU device type.
+        /// </summary>
+        Cooler,
 
-    /// <summary>
-    ///     Keyboard device type.
-    /// </summary>
-    Keyboard,
+        /// <summary>
+        ///     LED strip device type.
+        /// </summary>
+        Ledstrip,
 
-    /// <summary>
-    ///     Mouse device type.
-    /// </summary>
-    Mouse,
+        /// <summary>
+        ///     Keyboard device type.
+        /// </summary>
+        Keyboard,
 
-    /// <summary>
-    ///     Mousemat device type.
-    /// </summary>
-    Mousemat,
+        /// <summary>
+        ///     Mouse device type.
+        /// </summary>
+        Mouse,
 
-    /// <summary>
-    ///     Headset device type.
-    /// </summary>
-    Headset,
+        /// <summary>
+        ///     Mousemat device type.
+        /// </summary>
+        Mousemat,
 
-    /// <summary>
-    ///     Headset stand device type.
-    /// </summary>
-    HeadsetStand,
+        /// <summary>
+        ///     Headset device type.
+        /// </summary>
+        Headset,
 
-    /// <summary>
-    ///     Gamepad device type.
-    /// </summary>
-    Gamepad,
+        /// <summary>
+        ///     Headset stand device type.
+        /// </summary>
+        HeadsetStand,
 
-    /// <summary>
-    ///     Light device type.
-    /// </summary>
-    Light,
+        /// <summary>
+        ///     Gamepad device type.
+        /// </summary>
+        Gamepad,
 
-    /// <summary>
-    ///     Speaker device type.
-    /// </summary>
-    Speaker,
+        /// <summary>
+        ///     Light device type.
+        /// </summary>
+        Light,
 
-    /// <summary>
-    ///     Virtual device type.
-    /// </summary>
-    Virtual,
+        /// <summary>
+        ///     Speaker device type.
+        /// </summary>
+        Speaker,
 
-    /// <summary>
-    ///     Unknown device type.
-    /// </summary>
-    Unknown
+        /// <summary>
+        ///     Virtual device type.
+        /// </summary>
+        Virtual,
+
+        /// <summary>
+        ///     Unknown device type.
+        /// </summary>
+        Unknown
+    }
 }

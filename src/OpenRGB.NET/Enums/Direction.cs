@@ -1,42 +1,44 @@
-﻿namespace OpenRGB.NET;
-
-/// <summary>
-///     Enum representing the various directions a specific mode can have.
-/// </summary>
-public enum Direction
+﻿namespace OpenRGB.NET
 {
-    /// <summary>
-    ///     No direction.
-    /// </summary>
-    None = -1,
 
     /// <summary>
-    ///     Left direction.
+    ///     Enum representing the various directions a specific mode can have.
     /// </summary>
-    Left = 0,
+    public enum Direction
+    {
+        /// <summary>
+        ///     No direction.
+        /// </summary>
+        None = -1,
 
-    /// <summary>
-    ///     Right direction.
-    /// </summary>
-    Right = 1,
+        /// <summary>
+        ///     Left direction.
+        /// </summary>
+        Left = 0,
 
-    /// <summary>
-    ///     Up direction.
-    /// </summary>
-    Up = 2,
+        /// <summary>
+        ///     Right direction.
+        /// </summary>
+        Right = 1,
 
-    /// <summary>
-    ///     Down direction.
-    /// </summary>
-    Down = 3,
+        /// <summary>
+        ///     Up direction.
+        /// </summary>
+        Up = 2,
 
-    /// <summary>
-    ///     Horizontal direction.
-    /// </summary>
-    Horizontal = 4,
+        /// <summary>
+        ///     Down direction.
+        /// </summary>
+        Down = 3,
 
-    /// <summary>
-    ///     Vertical direction.
-    /// </summary>
-    Vertical = 5
+        /// <summary>
+        ///     Horizontal direction.
+        /// </summary>
+        Horizontal = 4,
+
+        /// <summary>
+        ///     Vertical direction.
+        /// </summary>
+        Vertical = 5
+    }
 }

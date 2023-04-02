@@ -1,53 +1,55 @@
 ﻿using System;
 using System.Net.Sockets;
 
-namespace OpenRGB.NET.Utils;
-
-internal static class SocketExtensions
+namespace OpenRGB.NET.Utils
 {
-    internal static int ReceiveFull(this Socket socket, Span<byte> buffer)
-    {
-        var size = buffer.Length;
-        var total = 0;
 
-        while (total < size)
+    internal static class SocketExtensions
+    {
+        internal static int ReceiveFull(this Socket socket, byte[] buffer)
         {
-            var recv = socket.Receive(buffer[total..]);
-            if (recv == 0) break;
-            total += recv;
+            var size = buffer.Length;
+            var total = 0;
+
+            while (total < size)
+            {
+                var recv = socket.Receive(buffer, total, size - total, SocketFlags.None);
+                if (recv == 0) break;
+                total += recv;
+            }
+
+            return total;
         }
 
-        return total;
-    }
-
-    internal static int SendFull(this Socket socket, ReadOnlySpan<byte> buffer)
-    {
-        var size = buffer.Length;
-        var total = 0;
-
-        while (total < size)
+        internal static int SendFull(this Socket socket, ReadOnlySpan<byte> buffer)
         {
-            var recv = socket.Send(buffer[total..]);
-            if (recv == 0) break;
-            total += recv;
+            var size = buffer.Length;
+            var total = 0;
+
+            while (total < size)
+            {
+                var recv = socket.Send(buffer.Slice(total).ToArray());
+                if (recv == 0) break;
+                total += recv;
+            }
+
+            return total;
         }
 
-        return total;
-    }
-    
-    internal static void Connect(this Socket socket, string ip, int port, TimeSpan timeout)
-    {
-        var result = socket.BeginConnect(ip, port, null, null);
+        internal static void Connect(this Socket socket, string ip, int port, TimeSpan timeout)
+        {
+            var result = socket.BeginConnect(ip, port, null, null);
 
-        bool success = result.AsyncWaitHandle.WaitOne(timeout, true);
-        if (success)
-        {
-            socket.EndConnect(result);
-        }
-        else
-        {
-            socket.Close();
-            throw new SocketException(10060); // Connection timed out.
+            bool success = result.AsyncWaitHandle.WaitOne(timeout, true);
+            if (success)
+            {
+                socket.EndConnect(result);
+            }
+            else
+            {
+                socket.Close();
+                throw new SocketException(10060); // Connection timed out.
+            }
         }
     }
 }

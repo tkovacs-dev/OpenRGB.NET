@@ -1,9 +1,13 @@
-﻿namespace OpenRGB.NET.Utils;
+﻿namespace OpenRGB.NET.Utils
+{
 
 #if DEBUG
-using System;
+    using System;
 
-[AttributeUsage(AttributeTargets.Struct)]
-internal class NonCopyableAttribute : Attribute { }
+    [AttributeUsage(AttributeTargets.Struct)]
+    internal class NonCopyableAttribute : Attribute
+    {
+    }
 
 #endif
+}
